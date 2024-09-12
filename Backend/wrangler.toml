@@ -21,5 +21,5 @@ compatibility_date = "2024-08-18"
 # binding = "AI"
 
 [vars]
-DATABASE_URL=""
-JWT_SECRET = ""
+DATABASE_URL="prisma://accelerate.prisma-data.net/?api_key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiMzkwMjVkNjktYzMwOS00ZjlkLThlODAtYTBlYjg5NWNjMjkyIiwidGVuYW50X2lkIjoiYWRmZTUwODlhYmE3NDgxMjk5ODA4YjljYThjYjE1ODM5OTBhMWI3YmNkNDJmZDZlNzA1MWQ5MjBkYmRkYTUzOSIsImludGVybmFsX3NlY3JldCI6IjUzNjBkZWM1LTY4ZWYtNDYxNS04YThhLTkzZDJjNzdiYTIyYiJ9.X1CM0L3JttpK7sntaKeV5By9wG7s5tBNV32UV_tLPTM"
+JWT_SECRET = "mynameisjwt123"

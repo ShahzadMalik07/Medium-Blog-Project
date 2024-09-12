@@ -90,7 +90,20 @@ postRouter.post('/', async (c) => {
     const prisma = new PrismaClient({
       datasourceUrl: c.env.DATABASE_URL,
       }).$extends(withAccelerate())
-      const posts = await prisma.post.findMany({})
+      const posts = await prisma.post.findMany({
+        select:{
+          title: true,
+          content: true,
+          id:true,
+          author:{
+            select:{
+              name:true
+            }
+          }
+
+
+        }
+      })
     return c.json({posts: posts})
   })
   
@@ -104,11 +117,21 @@ postRouter.post('/', async (c) => {
       const singlepost = await prisma.post.findFirst({
         where:{
           id
+        },
+        select:{
+          title:true,
+          content:true,
+          id:true,
+          author:{
+            select:{
+              name:true
+            }
+          }
         }
       })
   
     return c.json({
-      msg:singlepost
+      post:singlepost
     })
   })
   
