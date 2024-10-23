@@ -2,6 +2,7 @@
 import { Link } from "react-router-dom"
 
 
+
 interface blogftypes {
     authorname: string,
     title: string,
@@ -24,13 +25,14 @@ const BlogCard = ({ authorname, title, content, date, id }: blogftypes) => {
                     <div className="text-gray-600">{date}</div>
                 </div>
                 <div>
-                    <div className="text-xl font-bold mb-2">
+                    <div className="text-2xl font-bold mb-2">
                         {title}
                     </div>
 
                     <div className="text-gray-600 text-md font-semibold mb-8">{content}</div>
                 </div>
                 <div className="text-gray-500 text-sm">{`${Math.ceil(content.length / 100)} Min Read`}</div>
+                
 
 
             </div>
