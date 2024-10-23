@@ -1,4 +1,5 @@
 import { Link, useNavigate } from "react-router-dom"
+import { LiaEdit } from "react-icons/lia";
 
 
 const Appbar = () => {
@@ -9,11 +10,11 @@ const Appbar = () => {
                 <Link to={"/blogs"}>Medium</Link>
             </div>
             <div className="flex items-center">
-                <Link to={"/publish"}><button className="bg-green-400 px-2 py-2 text-white mr-4 rounded-md">New Blog</button></Link>
+                <Link to={"/publish"}><button className="flex items-center gap-2 text-xl px-2 py-2 text-gray-700 mr-4 rounded-md"><LiaEdit className="text-3xl"/> Write</button></Link>
                 <Link to={"/signin"}><button onClick={()=>{
                     localStorage.removeItem("token")
                     navigate("/signin")
-                }} className="bg-purple-400 px-2 py-2 text-white mr-4 rounded-md">Sign Out</button></Link>
+                }} className="bg-black px-2 py-2 text-white mr-4 rounded-md">Sign Out</button></Link>
 
 
                 <div className="bg-yellow-400 w-9 h-9 rounded-full flex justify-center items-center text-md">S</div>
