@@ -124,7 +124,8 @@ postRouter.post('/', async (c) => {
           id:true,
           author:{
             select:{
-              name:true
+              name:true,
+              id:true
             }
           }
         }
@@ -136,3 +137,32 @@ postRouter.post('/', async (c) => {
   })
   
 
+postRouter.delete("/:id", async (c)=>{
+
+  const id = await c.req.param("id")
+  
+  const prisma = new PrismaClient({
+    datasourceUrl: c.env.DATABASE_URL,
+    }).$extends(withAccelerate())
+    
+
+    try {
+      const deletedPost = await prisma.post.delete({
+        where: {
+          id: id,
+        },
+      });
+  
+      c.json({
+        message: 'Post deleted successfully',
+        post: deletedPost,
+      });
+    } catch (error:any) {
+      console.error(error);
+      c.json({
+        message: 'Error deleting post',
+        error: error.message,
+      });
+    }
+
+})

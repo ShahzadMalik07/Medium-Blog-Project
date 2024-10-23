@@ -41,8 +41,7 @@ const[loading,setloading] = useState(true)
 
 export const useBlog =({ id }: { id: string })=>{
  const [blog,setblog] = useState<blog>()
-
-const[loading,setloading] = useState(true)
+ const[loading,setloading] = useState(true)
 
     useEffect(()=>{
         axios.get(`${REQUEST_URL}/api/v1/blog/${id}`,{
