@@ -15,7 +15,7 @@ const Appbar = () => {
     const handleclick = async () => {
         setloading(true)
         try {
-            const response = await axios.delete(`${REQUEST_URL}/api/v1/blog/${id}`, {
+            await axios.delete(`${REQUEST_URL}/api/v1/blog/${id}`, {
                 headers: {
                     Authorization: localStorage.getItem('token'),
                 },
