@@ -45,9 +45,8 @@ const Appbar = () => {
             </div>
             <div className="flex items-center">
 
-                <button className="mr-3" onClick={(()=>{
-                    navigate(`/edit/${id}`)
-                })}>update</button>
+              {id && <button className="mr-4 px-3 py-2 bg-blue-500  text-white rounded-md"  onClick={(()=>{
+                    navigate(`/edit/${id}`)  })}>Update</button>}
 
                 {id && <button className="mr-4 px-3 py-2 bg-red-500 text-white rounded-md" onClick={handleclick}>{loading ? "Deleting..." : "Delete"}</button>}
                 <Link to={"/publish"}><button className="flex items-center gap-2 text-xl px-2 py-2 text-gray-700 mr-4 rounded-md"><LiaEdit className="text-3xl" /> Write</button></Link>

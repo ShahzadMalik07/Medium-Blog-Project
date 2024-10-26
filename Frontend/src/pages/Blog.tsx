@@ -10,7 +10,7 @@ import ShimmerUi from "../components/ShimmerUi";
 const Blog = () => {
   const { id } = useParams();
   const {blog, loading} = useBlog({id:id || ""})
-  console.log(blog)
+ 
   
   const name = blog?.author.name
   const finalName = usename(name)
