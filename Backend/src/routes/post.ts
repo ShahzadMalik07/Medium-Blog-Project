@@ -125,6 +125,17 @@ try {
         { content: { contains: query, mode: 'insensitive' } }
       ],
     },
+    select: {
+      title: true,
+      content: true,
+      id: true,
+      authorId:true,
+      author: {
+        select: {
+          name: true
+        }
+      }
+     }
   });
 
   return c.json(blogs);
